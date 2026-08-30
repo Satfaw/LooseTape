@@ -96,6 +96,13 @@
                     @endphp
                     <div style="display:flex;align-items:center;gap:10px;">
                         <div class="badge {{ $badgeClass }}">{{ $badgeLabel }}</div>
+                        @if ($b->status === 'pending' && $role !== 'customer')
+                            <form method="POST" action="{{ route('bookings.approve', $b) }}" onsubmit="return confirm('Approve booking BKG-{{ str_pad($b->id, 4, '0', STR_PAD_LEFT) }} ({{ $b->studio->nama_studio }}, {{ $b->tanggal->translatedFormat('d M') }} {{ substr($b->jam_mulai, 0, 5) }})?');" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn-ghost" style="font-size:10px;padding:5px 10px;color:#3FA34D;border-color:#3FA34D;cursor:pointer;background:none;">APPROVE</button>
+                            </form>
+                        @endif
                         @if ($b->status === 'pending' && ($role !== 'customer' || $b->user_id === auth()->id()))
                             <form method="POST" action="{{ route('bookings.cancel', $b) }}" onsubmit="return confirm('Yakin mau batalin booking BKG-{{ str_pad($b->id, 4, '0', STR_PAD_LEFT) }} ({{ $b->studio->nama_studio }}, {{ $b->tanggal->translatedFormat('d M') }} {{ substr($b->jam_mulai, 0, 5) }})?');" style="display:inline;">
                                 @csrf

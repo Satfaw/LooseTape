@@ -228,6 +228,23 @@ class BookingController extends Controller
         return redirect()->route($target)->with('success', 'Booking berhasil diperbarui.');
     }
 
+    public function approve(Booking $booking)
+    {
+        $user = Auth::user();
+
+        if (!$user->hasAnyRole(['admin', 'staff'])) {
+            abort(403, 'Unauthorized');
+        }
+
+        if ($booking->status !== 'pending') {
+            return back()->with('error', 'Hanya booking berstatus pending yang bisa di-approve.');
+        }
+
+        $booking->update(['status' => 'confirmed']);
+
+        return back()->with('success', 'Booking berhasil di-approve.');
+    }
+
     public function cancel(Booking $booking)
     {
         $user = Auth::user();

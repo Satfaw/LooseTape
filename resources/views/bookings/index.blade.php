@@ -53,6 +53,13 @@
                     <div class="table-cell-mono hide-mobile">{{ substr($b->jam_mulai, 0, 5) }}&ndash;{{ substr($b->jam_selesai, 0, 5) }}</div>
                     <div class="hide-mobile"><span class="badge {{ $badgeClass }}">{{ $badgeLabel }}</span></div>
                     <div style="display:flex;gap:8px;">
+                        @if ($b->status === 'pending')
+                            <form method="POST" action="{{ route('bookings.approve', $b) }}" onsubmit="return confirm('Approve booking BKG-{{ str_pad($b->id, 4, '0', STR_PAD_LEFT) }} ({{ $b->studio->nama_studio }}, {{ $b->tanggal->translatedFormat('d M') }} {{ substr($b->jam_mulai, 0, 5) }})?');" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn-pink" style="font-size:12px;padding:8px 14px;cursor:pointer;">Approve</button>
+                            </form>
+                        @endif
                         <a href="{{ route('bookings.edit', $b) }}" class="btn-outline">Edit</a>
                     </div>
                 </div>
