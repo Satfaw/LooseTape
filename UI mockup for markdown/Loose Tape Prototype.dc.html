@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0}
+  ::selection{background:#FF1F8F;color:#F1EFE8}
+  input,select,textarea{font-family:'Inter',sans-serif;outline:none}
+  input::placeholder,textarea::placeholder{color:#B4B2A9}
+  @keyframes glitch{0%{transform:translate(0,0);}20%{transform:translate(-2px,1px) skewX(-2deg);}40%{transform:translate(2px,-1px) skewX(2deg);}60%{transform:translate(-1px,2px);}80%{transform:translate(1px,-2px) skewX(-1deg);}100%{transform:translate(0,0);}}
+  @keyframes stickerjolt{0%{transform:rotate(var(--r,0deg)) scale(1);}50%{transform:rotate(calc(var(--r,0deg) * -1)) scale(1.05);}100%{transform:rotate(var(--r,0deg)) scale(1);}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#0A0A09;background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0px, transparent 1px, transparent 3px);color:#F1EFE8;font-family:'Inter',sans-serif;position:relative;">
+  <svg width="0" height="0" style="position:absolute;">
+    <filter id="xerox-threshold">
+      <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"></feColorMatrix>
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 1"></feFuncR>
+        <feFuncG type="discrete" tableValues="0 1"></feFuncG>
+        <feFuncB type="discrete" tableValues="0 1"></feFuncB>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+  <div style="position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;">
+    <img src="uploads/Fugazi Live Series_ Gainesville, FL USA, 2_17_93.webp" style="position:absolute;top:-6%;left:-10%;width:42%;height:auto;filter:url(#xerox-threshold) contrast(1.3);opacity:0.75;transform:rotate(-7deg);"></img>
+    <img src="uploads/Gonna Get Yours, Streetwise & Récidive @ Le Klub - 07 avril 2023.webp" style="position:absolute;top:12%;right:-8%;width:38%;height:auto;filter:url(#xerox-threshold) contrast(1.3);opacity:0.7;transform:rotate(6deg);"></img>
+    <img src="uploads/Unwound Poster.webp" style="position:absolute;bottom:-10%;left:26%;width:32%;height:auto;filter:url(#xerox-threshold) contrast(1.3);opacity:0.7;transform:rotate(-4deg);"></img>
+    <img src="uploads/punk.jpg" style="position:absolute;top:30%;left:38%;width:26%;height:auto;opacity:0.5;transform:rotate(3deg);"></img>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,9,0.35), rgba(10,10,9,0.6) 35%, rgba(10,10,9,0.85));"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle, #FF1F8F 1.2px, transparent 1.3px);background-size:9px 9px;opacity:0.15;mix-blend-mode:screen;"></div>
+  </div>
+  <div style="position:fixed;inset:0;z-index:50;pointer-events:none;opacity:1;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22&gt;&lt;filter id=%22n%22&gt;&lt;feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/&gt;&lt;feColorMatrix type=%22matrix%22 values=%220 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.35 0%22/&gt;&lt;/filter&gt;&lt;rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/&gt;&lt;/svg&gt;');background-size:150px 150px;"></div>
+  <div style="position:fixed;inset:0;z-index:51;pointer-events:none;opacity:0.1;mix-blend-mode:overlay;background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0px, transparent 1px, transparent 2px);"></div>
+
+  <div style="position:sticky;top:0;z-index:20;background:#161514;border-bottom:3px solid #FF1F8F;clip-path:polygon(0 0,100% 0,100% 94%,97% 100%,94% 95%,91% 100%,88% 96%,85% 100%,82% 95%,79% 100%,76% 96%,73% 100%,70% 95%,67% 100%,64% 96%,61% 100%,58% 95%,55% 100%,52% 96%,49% 100%,46% 95%,43% 100%,40% 96%,37% 100%,34% 95%,31% 100%,28% 96%,25% 100%,22% 95%,19% 100%,16% 98%,13% 100%,10% 95%,7% 100%,4% 96%,1% 100%,0 96%);padding-bottom:6px;">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 40px 10px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:baseline;gap:12px;">
+        <span style-hover="animation:glitch 0.25s steps(2) infinite;" style="font-family:'Archivo Black',sans-serif;font-size:26px;letter-spacing:-1px;color:#F1EFE8;text-shadow:3px 0 0 #FF1F8F, -3px 2px 0 rgba(255,255,255,0.3);cursor:default;{{ scrollGlitchAnim }}">LOOSE TAPE</span>
+        <span style="font-family:'UnifrakturCook',cursive;font-size:15px;color:#B4B2A9;">reservation dept.</span>
+        <img src="uploads/23081016836998263.webp" style="height:22px;width:auto;opacity:0.85;transform:rotate(-6deg);"></img>
+      </div>
+      <div style="display:flex;gap:4px;">
+        <button style="{{ navBtnStyle.login }}" style-hover="animation:glitch 0.2s steps(2) infinite;" onClick="{{ goToLogin }}">LOGIN</button>
+        <button style="{{ navBtnStyle.dashboard }}" style-hover="animation:glitch 0.2s steps(2) infinite;" onClick="{{ goToDashboard }}">DASHBOARD</button>
+        <button style="{{ navBtnStyle.list }}" style-hover="animation:glitch 0.2s steps(2) infinite;" onClick="{{ goToList }}">DAFTAR BOOKING</button>
+        <button style="{{ navBtnStyle.form }}" style-hover="animation:glitch 0.2s steps(2) infinite;" onClick="{{ openFormNew }}">FORM BOOKING</button>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 40px;display:flex;justify-content:center;align-items:center;position:relative;min-height:640px;overflow:hidden;">
+      <div style="position:absolute;inset:-60px;z-index:0;pointer-events:none;overflow:hidden;">
+        <img src="uploads/Unwound Poster.webp" style="position:absolute;top:-4%;left:-6%;width:36%;height:auto;filter:grayscale(1) blur(3px) contrast(1.15) brightness(0.55);opacity:0.4;transform:rotate(-9deg);"></img>
+        <img src="uploads/login-poster-front.jpg" style="position:absolute;top:8%;right:2%;width:30%;height:auto;filter:grayscale(1) blur(4px) contrast(1.15) brightness(0.5);opacity:0.35;transform:rotate(7deg);"></img>
+        <img src="uploads/Gonna Get Yours, Streetwise & Récidive @ Le Klub - 07 avril 2023.webp" style="position:absolute;bottom:-6%;left:18%;width:34%;height:auto;filter:grayscale(1) blur(4px) contrast(1.1) brightness(0.5);opacity:0.35;transform:rotate(-5deg);"></img>
+        <img src="uploads/punk.jpg" style="position:absolute;top:22%;left:38%;width:28%;height:auto;filter:blur(3px) saturate(0.7) brightness(0.6);opacity:0.4;transform:rotate(4deg);"></img>
+        <img src="uploads/anarchy-sticker.jpg" style="position:absolute;bottom:4%;right:22%;width:22%;height:auto;filter:grayscale(1) blur(3px);opacity:0.3;mix-blend-mode:screen;transform:rotate(-14deg);"></img>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,9,0.4), rgba(10,10,9,0.65) 45%, rgba(10,10,9,0.85));"></div>
+        <div style="position:absolute;inset:0;opacity:0.5;background-image:radial-gradient(circle, rgba(241,239,232,0.3) 1px, transparent 1.1px);background-size:6px 6px;mix-blend-mode:overlay;"></div>
+      </div>
+      <div style="width:420px;position:relative;z-index:1;">
+        <div style="position:absolute;bottom:-40px;right:-46px;width:96px;transform:rotate(-8deg);z-index:4;{{ scrollGlitchAnim }}" style-hover="animation:stickerjolt 0.4s ease;">
+          <div style="background:#161514;border:2px solid #F1EFE8;padding:10px 8px;clip-path:polygon(0 6%,100% 0,100% 94%,0 100%);box-shadow:4px 5px 0 rgba(0,0,0,0.35);">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#FF1F8F;line-height:1;text-align:center;">SIDE<br></br>B</div>
+          </div>
+        </div>
+        <div style="position:absolute;top:-6px;left:190px;width:56px;height:18px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(-3deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+        <div style="position:absolute;top:-6px;right:16px;width:56px;height:18px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(4deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+        <div style="position:absolute;top:-14px;left:28px;transform:rotate(-6deg);background:#161514;border:2px solid #FF1F8F;color:#FF1F8F;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;padding:3px 10px;z-index:2;">AKSES SISTEM</div>
+        <div style="position:relative;">
+        <div style="position:absolute;inset:0;background:#2C2C2A;transform:translate(4px,6px);z-index:0;clip-path:polygon(0 4%,4% 1%,8% 5%,12% 2%,16% 5%,20% 1%,24% 4%,28% 1%,32% 5%,36% 2%,40% 1%,44% 4%,48% 1%,52% 5%,56% 2%,60% 1%,64% 4%,68% 1%,72% 5%,76% 2%,80% 1%,84% 4%,88% 1%,92% 5%,96% 2%,100% 4%,100% 96%,96% 99%,92% 95%,88% 98%,84% 95%,80% 99%,76% 97%,72% 99%,68% 96%,64% 98%,60% 96%,56% 99%,52% 97%,48% 99%,44% 96%,40% 98%,36% 96%,32% 99%,28% 97%,24% 99%,20% 96%,16% 98%,12% 96%,8% 99%,4% 97%,0 99%);"></div>
+        <div style="position:relative;z-index:1;padding:36px 32px;background:#FFFFFF;clip-path:polygon(0 4%,4% 1%,8% 5%,12% 2%,16% 5%,20% 1%,24% 4%,28% 1%,32% 5%,36% 2%,40% 1%,44% 4%,48% 1%,52% 5%,56% 2%,60% 1%,64% 4%,68% 1%,72% 5%,76% 2%,80% 1%,84% 4%,88% 1%,92% 5%,96% 2%,100% 4%,100% 96%,96% 99%,92% 95%,88% 98%,84% 95%,80% 99%,76% 97%,72% 99%,68% 96%,64% 98%,60% 96%,56% 99%,52% 97%,48% 99%,44% 96%,40% 98%,36% 96%,32% 99%,28% 97%,24% 99%,20% 96%,16% 98%,12% 96%,8% 99%,4% 97%,0 99%);">
+        <div style="position:relative;display:inline-block;margin:12px 0 8px;">
+          <span style="position:absolute;top:3px;left:4px;font-family:'Archivo Black',sans-serif;font-size:30px;letter-spacing:-1px;color:#FF1F8F;z-index:0;white-space:nowrap;">MASUK</span>
+          <span style="position:relative;z-index:1;font-family:'Archivo Black',sans-serif;font-size:30px;letter-spacing:-1px;color:#161514;transform:rotate(-1.5deg);display:inline-block;white-space:nowrap;{{ scrollGlitchAnim }}">MASUK</span>
+        </div>
+        <div style="font-size:13px;color:#5F5E5A;margin-bottom:28px;">Login untuk mengakses sistem reservasi studio.</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:0.03em;color:#5F5E5A;">USERNAME</span>
+            <input type="text" placeholder="CTH. ADMIN_LT" style="border:2px solid #2C2C2A;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:10px 12px;font-size:14px;font-family:'Archivo Black',sans-serif;color:#2C2C2A;border-radius:2px;text-transform:uppercase;"></input>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:0.03em;color:#5F5E5A;">PASSWORD</span>
+            <input type="password" placeholder="••••••••" style="border:2px solid #2C2C2A;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:10px 12px;font-size:14px;color:#2C2C2A;border-radius:2px;"></input>
+          </label>
+          <button onClick="{{ goToDashboard }}" style="margin-top:8px;background:#FF1F8F;color:#F1EFE8;border:2px solid #2C2C2A;font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:0.03em;padding:12px;cursor:pointer;border-radius:2px;">MASUK &rarr;</button>
+          <div style="text-align:center;font-size:12px;color:#5F5E5A;text-decoration:underline;cursor:pointer;">Lupa password?</div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isDashboard }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1240px;margin:0 auto;padding:40px 40px 64px;position:relative;">
+      <div style="position:absolute;inset:-40px;z-index:0;pointer-events:none;opacity:0.5;background-image:radial-gradient(circle, rgba(241,239,232,0.35) 1px, transparent 1.1px), repeating-linear-gradient(37deg, transparent 0 18px, rgba(241,239,232,0.05) 18px 19px, transparent 19px 40px), repeating-linear-gradient(-52deg, transparent 0 26px, rgba(241,239,232,0.04) 26px 27px, transparent 27px 55px);background-size:7px 7px, 100% 100%, 100% 100%;"></div>
+      <img src="uploads/star-sticker.jpg" style="position:absolute;top:150px;right:-40px;width:60px;height:auto;mix-blend-mode:screen;opacity:0.85;transform:rotate(10deg);z-index:2;--r:10deg;{{ scrollGlitchAnim }}" style-hover="animation:stickerjolt 0.4s ease;"></img>
+      <img src="uploads/anarchy-sticker.jpg" style="position:absolute;top:210px;left:-10px;width:50px;height:auto;mix-blend-mode:screen;opacity:0.8;transform:rotate(-12deg);z-index:2;--r:-12deg;{{ scrollGlitchAnim }}" style-hover="animation:stickerjolt 0.4s ease;"></img>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
+        <div>
+          <div style="position:relative;display:inline-block;margin-bottom:6px;">
+            <span style="position:absolute;top:5px;left:6px;font-family:'Archivo Black',sans-serif;font-size:34px;letter-spacing:-1px;color:#FF1F8F;opacity:0.9;transform:rotate(-4deg);z-index:0;white-space:nowrap;">DASHBOARD</span>
+            <span style="position:relative;z-index:1;font-family:'Archivo Black',sans-serif;font-size:34px;letter-spacing:-1px;color:#F1EFE8;transform:rotate(2deg);display:inline-block;white-space:nowrap;{{ scrollGlitchAnim }}">DASHBOARD</span>
+          </div>
+          <div style="font-size:13px;color:#9B9890;margin-top:2px;">Tampilan berbeda sesuai peran pengguna.</div>
+        </div>
+        <div style="display:flex;border:2px solid #F1EFE8;border-radius:2px;overflow:hidden;">
+          <button style="{{ roleBtnStyle.admin }}" onClick="{{ setRoleAdmin }}">ADMIN</button>
+          <button style="{{ roleBtnStyle.staff }}" onClick="{{ setRoleStaff }}">STAFF</button>
+          <button style="{{ roleBtnStyle.customer }}" onClick="{{ setRoleCustomer }}">CUSTOMER</button>
+        </div>
+      </div>
+
+      <sc-if value="{{ isAdminRole }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;">
+          <div style="position:relative;transform:rotate(-1.5deg);">
+            <div style="position:absolute;top:-8px;left:18px;width:44px;height:14px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(-4deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+            <div style="position:absolute;inset:0;background:#2C2C2A;transform:translate(3px,4px);z-index:0;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);"></div>
+            <div style="position:relative;z-index:1;padding:20px;background:#FFFFFF;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#5F5E5A;letter-spacing:0.06em;">BOOKING BULAN INI</div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:34px;margin-top:6px;color:#2C2C2A;">47</div>
+            </div>
+          </div>
+          <div style="position:relative;transform:rotate(1deg);">
+            <div style="position:absolute;top:-8px;right:24px;width:44px;height:14px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(3deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+            <div style="position:absolute;inset:0;background:#2C2C2A;transform:translate(3px,4px);z-index:0;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);"></div>
+            <div style="position:relative;z-index:1;padding:20px;background:#FFFFFF;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#5F5E5A;letter-spacing:0.06em;">STUDIO AKTIF</div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:34px;margin-top:6px;color:#2C2C2A;">3</div>
+            </div>
+          </div>
+          <div style="position:relative;transform:rotate(-1deg);">
+            <div style="position:absolute;top:-8px;left:50%;width:44px;height:14px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:translateX(-50%) rotate(-2deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+            <div style="position:absolute;inset:0;background:#FF1F8F;transform:translate(3px,4px);z-index:0;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);"></div>
+            <div style="position:relative;z-index:1;padding:20px;background:#FFFFFF;clip-path:polygon(0 3%,6% 0,14% 4%,22% 1%,30% 3%,38% 0,46% 4%,54% 1%,62% 3%,70% 0,78% 4%,86% 1%,94% 3%,100% 0,100% 97%,94% 100%,86% 96%,78% 99%,70% 96%,62% 100%,54% 97%,46% 99%,38% 96%,30% 100%,22% 97%,14% 99%,6% 96%,0 100%);">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#FF1F8F;letter-spacing:0.06em;">PENDAPATAN BULAN INI</div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:34px;margin-top:6px;color:#FF1F8F;">Rp 8,2jt</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:3px;height:40px;margin-bottom:24px;padding:0 4px;">
+          <div style="width:5px;height:35%;background:#F1EFE8;"></div><div style="width:5px;height:70%;background:#FF1F8F;"></div><div style="width:5px;height:20%;background:#F1EFE8;"></div><div style="width:5px;height:90%;background:#F1EFE8;"></div><div style="width:5px;height:45%;background:#FF1F8F;"></div><div style="width:5px;height:60%;background:#F1EFE8;"></div><div style="width:5px;height:15%;background:#F1EFE8;"></div><div style="width:5px;height:80%;background:#FF1F8F;"></div><div style="width:5px;height:50%;background:#F1EFE8;"></div><div style="width:5px;height:95%;background:#F1EFE8;"></div><div style="width:5px;height:25%;background:#FF1F8F;"></div><div style="width:5px;height:65%;background:#F1EFE8;"></div><div style="width:5px;height:40%;background:#F1EFE8;"></div><div style="width:5px;height:85%;background:#FF1F8F;"></div><div style="width:5px;height:30%;background:#F1EFE8;"></div><div style="width:5px;height:75%;background:#F1EFE8;"></div><div style="width:5px;height:55%;background:#FF1F8F;"></div><div style="width:5px;height:10%;background:#F1EFE8;"></div><div style="width:5px;height:88%;background:#F1EFE8;"></div><div style="width:5px;height:42%;background:#FF1F8F;"></div><div style="width:5px;height:68%;background:#F1EFE8;"></div><div style="width:5px;height:22%;background:#F1EFE8;"></div><div style="width:5px;height:78%;background:#FF1F8F;"></div><div style="width:5px;height:48%;background:#F1EFE8;"></div><div style="width:5px;height:92%;background:#F1EFE8;"></div><div style="width:5px;height:33%;background:#FF1F8F;"></div><div style="width:5px;height:58%;background:#F1EFE8;"></div><div style="width:5px;height:18%;background:#F1EFE8;"></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-bottom:32px;position:relative;">
+          <div style="position:absolute;top:-8px;left:60px;width:44px;height:14px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(-3deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+          <div style="border:2px dashed rgba(241,239,232,0.4);padding:16px 20px;flex:1;font-size:13px;color:#B4B2A9;">Manajemen Data Studio <span style="color:#8A887F;">— halaman terpisah</span></div>
+          <div style="border:2px dashed rgba(241,239,232,0.4);padding:16px 20px;flex:1;font-size:13px;color:#B4B2A9;">Manajemen User &amp; Role <span style="color:#8A887F;">— halaman terpisah</span></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStaffRole }}" hint-placeholder-val="{{ false }}">
+        <div style="border:2px solid #F1EFE8;padding:16px 20px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:13px;color:#B4B2A9;">Jadwal hari ini: <span style="color:#F1EFE8;font-weight:600;">2 booking</span></div>
+          <button onClick="{{ openFormNew }}" style="background:#FF1F8F;color:#F1EFE8;border:2px solid #2C2C2A;font-family:'Archivo Black',sans-serif;font-size:12px;padding:8px 14px;cursor:pointer;border-radius:2px;">+ TAMBAH BOOKING</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCustomerRole }}" hint-placeholder-val="{{ false }}">
+        <div style="border:2px dashed #FF1F8F;padding:20px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:16px;">MAU NGE-JAM?</div>
+            <div style="font-size:13px;color:#9B9890;margin-top:2px;">Booking studio baru dalam hitungan menit.</div>
+          </div>
+          <button onClick="{{ openFormNew }}" style="background:#FF1F8F;color:#F1EFE8;border:2px solid #2C2C2A;font-family:'Archivo Black',sans-serif;font-size:13px;padding:10px 18px;cursor:pointer;border-radius:2px;">BOOKING BARU</button>
+        </div>
+      </sc-if>
+
+      <div style="display:inline-block;transform:rotate(-2deg);background:#161514;border:2px solid #FF1F8F;color:#FF1F8F;font-family:'Archivo Black',sans-serif;font-size:13px;letter-spacing:0.02em;padding:5px 12px;margin-bottom:14px;">{{ dashboardListLabel }}</div>
+      <div style="position:relative;">
+        <div style="position:absolute;top:-8px;right:40px;width:44px;height:14px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(4deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+        <div style="position:absolute;inset:0;background:#2C2C2A;transform:translate(3px,4px);z-index:0;clip-path:polygon(0 1%,5% 0,10% 1.2%,15% 0.3%,20% 1%,25% 0,30% 1.2%,35% 0.3%,40% 0,45% 1%,50% 0,55% 1.2%,60% 0.3%,65% 0,70% 1%,75% 0,80% 1.2%,85% 0.3%,90% 0,95% 1%,100% 0,100% 99%,95% 100%,90% 98.8%,85% 99.7%,80% 99%,75% 100%,70% 98.8%,65% 99.7%,60% 100%,55% 98.8%,50% 100%,45% 99%,40% 100%,35% 98.8%,30% 99.7%,25% 100%,20% 99%,15% 100%,10% 98.8%,5% 99.7%,0 100%);"></div>
+        <div style="position:relative;z-index:1;background:#FFFFFF;clip-path:polygon(0 1%,5% 0,10% 1.2%,15% 0.3%,20% 1%,25% 0,30% 1.2%,35% 0.3%,40% 0,45% 1%,50% 0,55% 1.2%,60% 0.3%,65% 0,70% 1%,75% 0,80% 1.2%,85% 0.3%,90% 0,95% 1%,100% 0,100% 99%,95% 100%,90% 98.8%,85% 99.7%,80% 99%,75% 100%,70% 98.8%,65% 99.7%,60% 100%,55% 98.8%,50% 100%,45% 99%,40% 100%,35% 98.8%,30% 99.7%,25% 100%,20% 99%,15% 100%,10% 98.8%,5% 99.7%,0 100%);">
+        <sc-for list="{{ dashboardBookings }}" as="b" hint-placeholder-count="2">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #B4B2A9;gap:16px;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5F5E5A;">{{ b.id }}</div>
+              <div style="font-size:14px;font-weight:600;color:#2C2C2A;">{{ b.studio }} &middot; {{ b.customer }}</div>
+              <div style="font-size:12px;color:#5F5E5A;">{{ b.date }}, {{ b.time }}</div>
+            </div>
+            <div style="{{ b.badgeStyle }}">{{ b.statusLabel }}</div>
+          </div>
+        </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1240px;margin:0 auto;padding:40px 40px 64px;position:relative;">
+      <div style="position:absolute;top:0px;right:145px;font-family:'Archivo Black',sans-serif;font-size:46px;line-height:1;color:#FF1F8F;-webkit-text-stroke:2px #161514;transform:rotate(8deg);z-index:2;--r:8deg;{{ scrollGlitchAnim }}" style-hover="animation:stickerjolt 0.4s ease;">!</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+        <div>
+          <div style="position:relative;display:inline-block;margin-bottom:6px;">
+            <span style="position:absolute;top:5px;left:6px;font-family:'Archivo Black',sans-serif;font-size:34px;letter-spacing:-1px;color:#FF1F8F;opacity:0.9;transform:rotate(3deg);z-index:0;white-space:nowrap;">DAFTAR BOOKING</span>
+            <span style="position:relative;z-index:1;font-family:'Archivo Black',sans-serif;font-size:34px;letter-spacing:-1px;color:#F1EFE8;transform:rotate(-2deg);display:inline-block;white-space:nowrap;{{ scrollGlitchAnim }}">DAFTAR BOOKING</span>
+          </div>
+          <div style="font-size:13px;color:#9B9890;margin-top:2px;">Semua reservasi studio.</div>
+        </div>
+        <button onClick="{{ openFormNew }}" style="background:#FF1F8F;color:#F1EFE8;border:2px solid #2C2C2A;font-family:'Archivo Black',sans-serif;font-size:13px;padding:10px 18px;cursor:pointer;border-radius:2px;">+ BOOKING BARU</button>
+      </div>
+      <div style="display:flex;gap:12px;margin-bottom:20px;">
+        <input type="text" placeholder="Cari nama, studio, atau ID..." style="flex:1;border:2px solid #2C2C2A;background:#F1EFE8;padding:10px 12px;font-size:13px;border-radius:2px;"></input>
+        <select style="border:2px solid #2C2C2A;background:#F1EFE8;padding:10px 12px;font-size:13px;border-radius:2px;color:#2C2C2A;">
+          <option>Semua status</option>
+          <option>Dikonfirmasi</option>
+          <option>Pending</option>
+          <option>Dibatalkan</option>
+        </select>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute;inset:0;background:#FF1F8F;transform:translate(3px,4px);z-index:0;clip-path:polygon(0 1%,5% 0,10% 1.2%,15% 0.3%,20% 1%,25% 0,30% 1.2%,35% 0.3%,40% 0,45% 1%,50% 0,55% 1.2%,60% 0.3%,65% 0,70% 1%,75% 0,80% 1.2%,85% 0.3%,90% 0,95% 1%,100% 0,100% 99%,95% 100%,90% 98.8%,85% 99.7%,80% 99%,75% 100%,70% 98.8%,65% 99.7%,60% 100%,55% 98.8%,50% 100%,45% 99%,40% 100%,35% 98.8%,30% 99.7%,25% 100%,20% 99%,15% 100%,10% 98.8%,5% 99.7%,0 100%);"></div>
+        <div style="position:relative;z-index:1;background:#0A0A09;clip-path:polygon(0 1%,5% 0,10% 1.2%,15% 0.3%,20% 1%,25% 0,30% 1.2%,35% 0.3%,40% 0,45% 1%,50% 0,55% 1.2%,60% 0.3%,65% 0,70% 1%,75% 0,80% 1.2%,85% 0.3%,90% 0,95% 1%,100% 0,100% 99%,95% 100%,90% 98.8%,85% 99.7%,80% 99%,75% 100%,70% 98.8%,65% 99.7%,60% 100%,55% 98.8%,50% 100%,45% 99%,40% 100%,35% 98.8%,30% 99.7%,25% 100%,20% 99%,15% 100%,10% 98.8%,5% 99.7%,0 100%);">
+        <div style="position:absolute;inset:0;pointer-events:none;opacity:0.5;background-image:radial-gradient(circle, rgba(241,239,232,0.3) 1px, transparent 1.1px), repeating-linear-gradient(35deg, transparent 0 16px, rgba(255,31,143,0.06) 16px 17px, transparent 17px 34px);background-size:7px 7px, 100% 100%;"></div>
+        <div style="position:relative;display:grid;grid-template-columns:110px 100px 1fr 120px 130px 110px 130px;padding:12px 18px;border-bottom:2px solid #FF1F8F;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#FF1F8F;font-weight:700;">
+          <div>ID</div><div>STUDIO</div><div>CUSTOMER</div><div>TANGGAL</div><div>JAM</div><div>STATUS</div><div>AKSI</div>
+        </div>
+        <sc-for list="{{ dashboardAllBookings }}" as="b" hint-placeholder-count="3">
+          <div style="position:relative;display:grid;grid-template-columns:110px 100px 1fr 120px 130px 110px 130px;padding:16px 18px;border-bottom:2px dashed rgba(255,31,143,0.5);align-items:center;font-size:13px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9B9890;">{{ b.id }}</div>
+            <div style="color:#B4B2A9;">{{ b.studio }}</div>
+            <div style="font-weight:700;font-family:'Archivo Black',sans-serif;font-size:15px;color:#F1EFE8;">{{ b.customer }}</div>
+            <div style="color:#9B9890;">{{ b.date }}</div>
+            <div style="color:#9B9890;font-family:'JetBrains Mono',monospace;font-size:12px;">{{ b.time }}</div>
+            <div><span style="{{ b.badgeStyle }}">{{ b.statusLabel }}</span></div>
+            <div style="display:flex;gap:8px;">
+              <button onClick="{{ b.editHandler }}" style="border:1px solid #F1EFE8;color:#F1EFE8;background:none;font-size:11px;padding:5px 9px;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;">Edit</button>
+            </div>
+          </div>
+        </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isForm }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1240px;margin:0 auto;padding:40px 40px 64px;display:flex;justify-content:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:-60px;z-index:0;pointer-events:none;overflow:hidden;">
+        <img src="uploads/Unwound Poster.webp" style="position:absolute;top:-4%;left:-6%;width:36%;height:auto;filter:grayscale(1) blur(3px) contrast(1.15) brightness(0.55);opacity:0.4;transform:rotate(-9deg);"></img>
+        <img src="uploads/login-poster-front.jpg" style="position:absolute;top:8%;right:2%;width:30%;height:auto;filter:grayscale(1) blur(4px) contrast(1.15) brightness(0.5);opacity:0.35;transform:rotate(7deg);"></img>
+        <img src="uploads/Gonna Get Yours, Streetwise & Récidive @ Le Klub - 07 avril 2023.webp" style="position:absolute;bottom:-6%;left:18%;width:34%;height:auto;filter:grayscale(1) blur(4px) contrast(1.1) brightness(0.5);opacity:0.35;transform:rotate(-5deg);"></img>
+        <img src="uploads/punk.jpg" style="position:absolute;top:22%;left:38%;width:28%;height:auto;filter:blur(3px) saturate(0.7) brightness(0.6);opacity:0.4;transform:rotate(4deg);"></img>
+        <img src="uploads/anarchy-sticker.jpg" style="position:absolute;bottom:4%;right:22%;width:22%;height:auto;filter:grayscale(1) blur(3px);opacity:0.3;mix-blend-mode:screen;transform:rotate(-14deg);"></img>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,9,0.4), rgba(10,10,9,0.65) 45%, rgba(10,10,9,0.85));"></div>
+        <div style="position:absolute;inset:0;opacity:0.5;background-image:radial-gradient(circle, rgba(241,239,232,0.3) 1px, transparent 1.1px);background-size:6px 6px;mix-blend-mode:overlay;"></div>
+      </div>
+      <div style="width:560px;position:relative;z-index:1;">
+        <div style="position:absolute;top:-6px;left:260px;width:56px;height:18px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(-3deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+        <div style="position:absolute;top:-6px;right:16px;width:56px;height:18px;background:rgba(241,239,232,0.85);border:1px solid rgba(44,44,42,0.25);transform:rotate(4deg);z-index:3;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div>
+        <div style="position:absolute;top:-14px;left:28px;transform:rotate(-6deg);background:#161514;border:2px solid #FF1F8F;color:#FF1F8F;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;letter-spacing:0.08em;padding:3px 10px;z-index:2;">{{ formBadgeText }}</div>
+        <div style="position:relative;">
+        <div style="position:absolute;inset:0;background:#2C2C2A;transform:translate(4px,6px);z-index:0;clip-path:polygon(0 4%,4% 1%,8% 5%,12% 2%,16% 5%,20% 1%,24% 4%,28% 1%,32% 5%,36% 2%,40% 1%,44% 4%,48% 1%,52% 5%,56% 2%,60% 1%,64% 4%,68% 1%,72% 5%,76% 2%,80% 1%,84% 4%,88% 1%,92% 5%,96% 2%,100% 4%,100% 96%,96% 99%,92% 95%,88% 98%,84% 95%,80% 99%,76% 97%,72% 99%,68% 96%,64% 98%,60% 96%,56% 99%,52% 97%,48% 99%,44% 96%,40% 98%,36% 96%,32% 99%,28% 97%,24% 99%,20% 96%,16% 98%,12% 96%,8% 99%,4% 97%,0 99%);"></div>
+        <div style="position:relative;z-index:1;padding:32px;background:#FFFFFF;clip-path:polygon(0 4%,4% 1%,8% 5%,12% 2%,16% 5%,20% 1%,24% 4%,28% 1%,32% 5%,36% 2%,40% 1%,44% 4%,48% 1%,52% 5%,56% 2%,60% 1%,64% 4%,68% 1%,72% 5%,76% 2%,80% 1%,84% 4%,88% 1%,92% 5%,96% 2%,100% 4%,100% 96%,96% 99%,92% 95%,88% 98%,84% 95%,80% 99%,76% 97%,72% 99%,68% 96%,64% 98%,60% 96%,56% 99%,52% 97%,48% 99%,44% 96%,40% 98%,36% 96%,32% 99%,28% 97%,24% 99%,20% 96%,16% 98%,12% 96%,8% 99%,4% 97%,0 99%);">
+        <div style="position:absolute;inset:0;pointer-events:none;opacity:0.6;background-image:radial-gradient(circle, rgba(44,44,42,0.14) 1px, transparent 1.1px);background-size:6px 6px;"></div>
+        <div style="position:absolute;top:14px;right:18px;width:16px;height:16px;border:2px solid #161514;border-radius:50%;transform:rotate(35deg);z-index:2;"><div style="position:absolute;top:6px;left:-14px;width:26px;height:2px;background:#161514;transform:rotate(-20deg);"></div></div>
+        <div style="position:relative;display:inline-block;margin:14px 0 26px;">
+          <span style="position:absolute;top:3px;left:4px;font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:-1px;color:#FF1F8F;z-index:0;white-space:nowrap;">{{ formTitle }}</span>
+          <span style="position:relative;z-index:1;font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:-1px;color:#161514;transform:rotate(-1.5deg);display:inline-block;white-space:nowrap;{{ scrollGlitchAnim }}">{{ formTitle }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <label style="display:flex;flex-direction:column;gap:0;grid-column:span 2;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(-2deg);width:fit-content;">STUDIO</span>
+            <select defaultValue="{{ formData.studio }}" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(0.3deg);">
+              <option>Studio A</option><option>Studio B</option><option>Studio C</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(2deg);width:fit-content;">TANGGAL</span>
+            <input type="text" defaultValue="{{ formData.date }}" placeholder="CTH. 05 AGU 2026" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(-0.3deg);"></input>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(-1.5deg);width:fit-content;">JAM</span>
+            <input type="text" defaultValue="{{ formData.time }}" placeholder="14:00-16:00" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(0.4deg);"></input>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(2deg);width:fit-content;">NAMA PENYEWA</span>
+            <input type="text" defaultValue="{{ formData.customer }}" placeholder="NAMA LENGKAP" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(-0.4deg);"></input>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(-1.5deg);width:fit-content;">NO. HP</span>
+            <input type="text" placeholder="0812XXXXXXX" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(0.3deg);"></input>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;grid-column:span 2;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(-2deg);width:fit-content;">CATATAN</span>
+            <textarea rows="3" placeholder="KEBUTUHAN TAMBAHAN (OPSIONAL)" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(0.2deg);resize:none;font-family:'Inter',sans-serif;"></textarea>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0;grid-column:span 2;">
+            <span style="display:inline-block;font-family:'Archivo Black',sans-serif;font-size:10px;letter-spacing:0.02em;color:#F1EFE8;background:#161514;padding:2px 7px;margin-bottom:-9px;position:relative;z-index:2;transform:rotate(2deg);width:fit-content;">STATUS</span>
+            <select defaultValue="{{ formData.statusLabel }}" style="border:3px solid #161514;background-color:#F1EFE8;background-image:radial-gradient(rgba(44,44,42,0.25) 0.6px, transparent 0.7px);background-size:5px 5px;padding:11px 10px;font-size:13px;border-radius:0px;box-shadow:4px 4px 0 #161514;transform:rotate(-0.2deg);">
+              <option>Dikonfirmasi</option><option>Pending</option><option>Dibatalkan</option>
+            </select>
+          </label>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:30px;">
+          <div style="font-family:'Archivo Black',sans-serif;font-size:26px;color:#161514;transform:rotate(-10deg) scaleY(1.3);line-height:1;">&#8595;</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#5F5E5A;transform:rotate(-3deg);">SIGN<br></br>HERE</div>
+          <button onClick="{{ goToList }}" style="flex:1;background:#FF1F8F;color:#161514;border:4px solid #161514;font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:0.02em;padding:20px;cursor:pointer;border-radius:0px;box-shadow:6px 6px 0 #161514;" style-hover="background:#161514;color:#FF1F8F;animation:glitch 0.2s steps(2) infinite;">SIMPAN &rarr;</button>
+        </div>
+        <div style="text-align:center;margin-top:14px;">
+          <button onClick="{{ goToList }}" style="background:none;color:#5F5E5A;border:none;text-decoration:underline;font-family:'Inter',sans-serif;font-size:12px;cursor:pointer;">Batal, kembali ke daftar</button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STATUS_META = {
+  confirmed: { label: 'DIKONFIRMASI', style: 'display:inline-block;transform:rotate(-6deg);background:#FF1F8F;color:#F1EFE8;border:2px solid #2C2C2A;font-family:\'JetBrains Mono\',monospace;font-weight:700;font-size:10px;letter-spacing:0.06em;padding:3px 9px;border-radius:2px;' },
+  pending: { label: 'PENDING', style: 'display:inline-block;transform:rotate(-6deg);background:#161514;color:#FF1F8F;border:2px solid #FF1F8F;font-family:\'JetBrains Mono\',monospace;font-weight:700;font-size:10px;letter-spacing:0.06em;padding:3px 9px;border-radius:2px;' },
+  cancelled: { label: 'DIBATALKAN', style: 'display:inline-block;transform:rotate(-6deg);background:transparent;color:#5F5E5A;border:2px solid #B4B2A9;font-family:\'JetBrains Mono\',monospace;font-weight:700;font-size:10px;letter-spacing:0.06em;padding:3px 9px;border-radius:2px;' }
+};
+
+const BOOKINGS = [
+  { id: 'BKG-2601', studio: 'Studio A', customer: 'Dimas Aditya', date: '02 Agu 2026', time: '14:00–16:00', status: 'confirmed' },
+  { id: 'BKG-2602', studio: 'Studio B', customer: 'Rani Puspita', date: '03 Agu 2026', time: '10:00–12:00', status: 'pending' },
+  { id: 'BKG-2603', studio: 'Studio A', customer: 'Yoga Saputra', date: '01 Agu 2026', time: '18:00–20:00', status: 'cancelled' }
+];
+
+class Component extends DCLogic {
+  state = { page: 'login', role: 'admin', formBookingId: null, scrollGlitching: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      clearTimeout(this._glitchTimer);
+      if (!this.state.scrollGlitching) this.setState({ scrollGlitching: true });
+      this._glitchTimer = setTimeout(() => this.setState({ scrollGlitching: false }), 220);
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    clearTimeout(this._glitchTimer);
+  }
+
+  goTo(page) { this.setState({ page }); }
+  setRole(role) { this.setState({ role }); }
+  openForm(id) { this.setState({ page: 'form', formBookingId: id }); }
+
+  navBtn(active) {
+    return 'font-family:\'Inter\',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.03em;padding:8px 14px;border:none;background:none;cursor:pointer;border-radius:2px;' +
+      (active ? 'color:#161514;background:#F1EFE8;' : 'color:#B4B2A9;');
+  }
+
+  roleBtn(active, bg, fg) {
+    return 'font-family:\'JetBrains Mono\',monospace;font-weight:700;font-size:11px;letter-spacing:0.06em;padding:9px 16px;border:none;cursor:pointer;' +
+      (active ? ('color:' + fg + ';background:' + bg + ';') : 'color:#2C2C2A;background:#F1EFE8;');
+  }
+
+  decorateBooking(b) {
+    const meta = STATUS_META[b.status];
+    return { ...b, statusLabel: meta.label, badgeStyle: meta.style, editHandler: () => this.openForm(b.id) };
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const role = this.state.role;
+    const allBookings = BOOKINGS.map(b => this.decorateBooking(b));
+
+    let dashboardBookings = allBookings;
+    let dashboardListLabel = 'BOOKING TERBARU';
+    if (role === 'staff') {
+      dashboardBookings = allBookings.slice(0, 2);
+      dashboardListLabel = 'JADWAL HARI INI';
+    } else if (role === 'customer') {
+      dashboardBookings = allBookings.filter(b => b.customer === 'Rani Puspita');
+      dashboardListLabel = 'BOOKING SAYA';
+    }
+
+    const editing = this.state.formBookingId != null ? BOOKINGS.find(b => b.id === this.state.formBookingId) : null;
+    const formData = editing
+      ? { studio: editing.studio, date: editing.date, time: editing.time, customer: editing.customer, statusLabel: STATUS_META[editing.status].label }
+      : { studio: 'Studio A', date: '', time: '', customer: '', statusLabel: 'Pending' };
+
+    const scrollGlitchAnim = this.state.scrollGlitching ? 'animation:glitch 0.2s steps(2) infinite;' : '';
+    return {
+      scrollGlitchAnim,
+      isLogin: page === 'login',
+      isDashboard: page === 'dashboard',
+      isList: page === 'list',
+      isForm: page === 'form',
+      isAdminRole: role === 'admin',
+      isStaffRole: role === 'staff',
+      isCustomerRole: role === 'customer',
+      goToLogin: () => this.goTo('login'),
+      goToDashboard: () => this.goTo('dashboard'),
+      goToList: () => this.goTo('list'),
+      openFormNew: () => this.openForm(null),
+      setRoleAdmin: () => this.setRole('admin'),
+      setRoleStaff: () => this.setRole('staff'),
+      setRoleCustomer: () => this.setRole('customer'),
+      navBtnStyle: {
+        login: this.navBtn(page === 'login') + scrollGlitchAnim,
+        dashboard: this.navBtn(page === 'dashboard') + scrollGlitchAnim,
+        list: this.navBtn(page === 'list') + scrollGlitchAnim,
+        form: this.navBtn(page === 'form') + scrollGlitchAnim
+      },
+      roleBtnStyle: {
+        admin: this.roleBtn(role === 'admin', '#161514', '#F1EFE8'),
+        staff: this.roleBtn(role === 'staff', '#FF1F8F', '#161514'),
+        customer: this.roleBtn(role === 'customer', '#F1EFE8', '#FF1F8F')
+      },
+      dashboardBookings,
+      dashboardListLabel,
+      dashboardAllBookings: allBookings,
+      formTitle: editing ? 'EDIT BOOKING' : 'TAMBAH BOOKING',
+      formBadgeText: editing ? 'EDIT DATA' : 'FORM BARU',
+      formData
+    };
+  }
+}
+
+</script>
+</body>
+</html>
