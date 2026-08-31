@@ -3,8 +3,8 @@
 @section('title', 'Daftar Booking — Loose Tape')
 
 @section('content')
-@include('partials.page-collage')
 <div class="page-wrap">
+    <div class="dashboard-texture"></div>
     <div style="position:absolute;top:0px;right:145px;font-family:'Archivo Black',sans-serif;font-size:46px;line-height:1;color:#FF1F8F;-webkit-text-stroke:2px #161514;transform:rotate(8deg);z-index:2;--r:8deg;" class="sticker-hover">!</div>
 
     <div class="page-header">
