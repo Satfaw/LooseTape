@@ -53,11 +53,12 @@
 
                     <label class="field" style="grid-column:span 2;">
                         <span class="field-label" style="transform:rotate(-2deg);">STUDIO</span>
-                        <select name="studio_id" class="field-select" style="transform:rotate(0.3deg);">
+                        <select name="studio_id" class="field-select" style="transform:rotate(0.3deg);" onchange="document.getElementById('studio-desc').textContent = this.selectedOptions[0]?.dataset.desc || ''">
                             @foreach ($studios as $s)
-                                <option value="{{ $s->id }}" @selected(old('studio_id', $booking?->studio_id) == $s->id)>{{ $s->nama_studio }} (Rp {{ number_format($s->harga_per_jam, 0, ',', '.') }}/jam)</option>
+                                <option value="{{ $s->id }}" data-desc="{{ $s->deskripsi }}" @selected(old('studio_id', $booking?->studio_id) == $s->id)>{{ $s->nama_studio }} (Rp {{ number_format($s->harga_per_jam, 0, ',', '.') }}/jam)</option>
                             @endforeach
                         </select>
+                        <small id="studio-desc" style="display:block;margin-top:10px;font-size:14px;line-height:1.5;color:var(--ink-dark);font-weight:500;">{{ $studios->firstWhere('id', old('studio_id', $booking?->studio_id ?? $studios->first()?->id))?->deskripsi }}</small>
                     </label>
 
                     <label class="field">

@@ -66,7 +66,6 @@
     @elseif ($role === 'staff')
         <div class="solid-box" style="margin-bottom:24px;">
             <div style="font-size:13px;color:#B4B2A9;">Jadwal hari ini: <span style="color:#F1EFE8;font-weight:600;">{{ $bookings->count() }} booking</span></div>
-            <a href="{{ route('bookings.create') }}" class="btn-pink" style="font-size:12px;padding:8px 14px;">+ TAMBAH BOOKING</a>
         </div>
     @else
         <div class="pink-dashed-box" style="margin-bottom:24px;">

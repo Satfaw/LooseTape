@@ -15,7 +15,6 @@
             </div>
             <div class="page-sub">Semua reservasi studio.</div>
         </div>
-        <a href="{{ route('bookings.create') }}" class="btn-pink" style="font-size:13px;padding:10px 18px;">+ BOOKING BARU</a>
     </div>
 
     @if (session('success'))

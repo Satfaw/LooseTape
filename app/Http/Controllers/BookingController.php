@@ -120,8 +120,11 @@ class BookingController extends Controller
 
     public function create()
     {
+        if (Auth::user()->hasAnyRole(['admin', 'staff'])) {
+            return redirect()->route('bookings.index');
+        }
+
         $studios = Studio::where('status', 'aktif')->get();
-        // admin & staff can create booking for any user, customers create for themselves
         $users = User::all();
         return view('bookings.form', [
             'booking' => null,

@@ -37,6 +37,10 @@
 
     @yield('content')
 
+    @auth
+    @include('partials.footer')
+    @endauth
+
     @yield('scripts')
     @stack('scripts')
 </body>
